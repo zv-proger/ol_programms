@@ -15,13 +15,13 @@ map<char, const set<char>> vars = {
 };
 
 int operator^ (const set<char> &a, const set<char> &b){
-    set<char> ans;
+    int ans = 0;
     for (char c : a) {
         if (b.count(c)) {
-            ans.insert(c);
+            ans++;
         }
     }
-    return ans.size();
+    return ans;
 }
 
 int main() {
