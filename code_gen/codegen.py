@@ -37,6 +37,7 @@ blocks = {
   'types': [],
   'defines': [],
   'funcs': [],
+  'consts': [],
   'main_body': []
 }
 

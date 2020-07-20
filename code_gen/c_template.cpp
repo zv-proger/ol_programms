@@ -6,6 +6,7 @@
 //import//using namespace std;
 
 //defines//
+//consts//
 //types//
 //funcs//
 int main() {
