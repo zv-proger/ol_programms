@@ -31,7 +31,7 @@ else:
 
 
 blocks = {
-  'desc': [desc], 
+  'desc': [desc],
   'macro': [desc_makro],
   'import': [],
   'types': [],
@@ -42,7 +42,8 @@ blocks = {
 }
 
 std_mdls = {
-    'io': cwd + r'\fast_io.h',
+    'io': cwd + r'\io.h',
+    'fast': cwd + r'\fast_io.h',
     'pr': cwd + r'\pair.h',
     'ans': cwd + r'\doans.h',
     'std': cwd + r'\std.h',
