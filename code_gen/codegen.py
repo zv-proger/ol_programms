@@ -13,14 +13,17 @@ desc_file = sys.argv[1]
 desc_makro = sys.argv[2]
 full_name = sys.argv[3]
 
-if os.path.isfile(full_name):
-    edit(full_name)
-    exit()
-
 if not full_name.endswith('.cpp'):
     full_name += '.cpp'
 
 modules = ['std'] + sys.argv[4:]
+
+if os.path.isfile(full_name) and not '-f' in modules:
+    edit(full_name)
+    exit()
+
+while '-f' in modules:
+    modules.remove('-f')
 
 text = open(c_template, 'r', encoding='ANSI').read();
 
