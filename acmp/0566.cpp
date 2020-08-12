@@ -26,13 +26,12 @@ bool usd[101][101][101];
 int main() {
     int k, a, b, c; cin >> a >> b >> c >> k;
     queue<pos_t> q; q. push( {a, b, c} );
-    usd[a][b][c] = true;
     while(!q.empty()) {
-        auto &pos = q.front(); q.pop();
+        auto pos = q.front(); q.pop();
         int o = dp[pos.a][pos.b][pos.c].second;
         int c = dp[pos.a][pos.b][pos.c].first;
         if (pos.a > 0) {
-            dp[pos.a - 1][pos.b][pos.c] = 
+            dp[pos.a - 1][pos.b][pos.c] =
              max(dp[pos.a - 1][pos.b][pos.c], { o + 1 >= k ? c + 1 : c, o + 1 >= k ? 0 : o + 1});
             if (!usd[pos.a - 1][pos.b][pos.c]) {
                 usd[pos.a - 1][pos.b][pos.c] = true;
@@ -40,7 +39,7 @@ int main() {
             }
         }
         if (pos.b > 0) {
-            dp[pos.a][pos.b - 1][pos.c] = 
+            dp[pos.a][pos.b - 1][pos.c] =
              max(dp[pos.a][pos.b - 1][pos.c], { o + 2 >= k ? c + 1 : c, o + 2 >= k ? 0 : o + 2});
             if (!usd[pos.a][pos.b - 1][pos.c]) {
                 usd[pos.a][pos.b - 1][pos.c] = true;
@@ -48,7 +47,7 @@ int main() {
             }
         }
         if (pos.c > 0) {
-            dp[pos.a][pos.b][pos.c - 1] = 
+            dp[pos.a][pos.b][pos.c - 1] =
              max(dp[pos.a][pos.b][pos.c - 1], { o + 3 >= k ? c + 1 : c, o + 3 >= k ? 0 : o + 3});
             if (!usd[pos.a][pos.b][pos.c - 1]) {
                 usd[pos.a][pos.b][pos.c - 1] = true;
