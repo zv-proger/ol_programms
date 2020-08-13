@@ -25,7 +25,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         for (int j = i; j < n; j++) {
             if (abs(dt[j][i]) > 1e-9) {
-                swap(dt[i], dt[j]); 
+                swap(dt[i], dt[j]);
                 break;
             }
         }
@@ -38,11 +38,6 @@ int main() {
                 dt[l][j] -= dt[i][j] * dt[l][i];
             }
         }
-    }
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j <= n; j++) {
-            cout << dt[i][j] << ' ';
-        } cout << endl;
     }
     for (int i = 0; i < n; i++) cout << flr(dt[i][n]) << ' ';
 }
