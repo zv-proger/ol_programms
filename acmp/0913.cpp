@@ -25,14 +25,14 @@ int main() {
     }
     sort(ALL(speeds));
     int ans = m; double best_time = 1e20;
-    for (; !speeds.empty();speeds.pop_back()) {
+    for (; !speeds.empty(); speeds.pop_back()) {
         m = speeds.back();
         double tm = 0;
         for (int i = 0; i < n; i++) {
             tm += dt[i].d / 1.0 / m;
             if (m > dt[i].l) tm += dt[i].h;
         }
-        if (tm < 1e-9 + best_time) {
+        if (tm + 1e-9 < best_time) {
             best_time = tm;
             ans = m;
         }

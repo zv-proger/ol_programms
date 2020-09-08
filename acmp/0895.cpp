@@ -1,6 +1,6 @@
 /*
     Автор кода: Вадим Зинов (zv.proger@yandex.ru)
-    Решение задачи 0985 с сайта acmp.ru
+    Решение задачи 0895 с сайта acmp.ru
 */
 
 #include<bits/stdc++.h>

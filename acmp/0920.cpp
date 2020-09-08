@@ -12,9 +12,8 @@ int ans = 20, n;
 void calc(int msk, int i, int cur) {
     if (!msk) { ans = min(ans, cur); return; }
     if (cur >= min(ans, n)) return;
-    for (; i < cn.size(); i++) {
-        calc((msk | cn[i]) ^ cn[i], i + 1, cur + 1);
-    }
+    calc((msk | cn[i]) ^ cn[i], i + 1, cur + 1);
+    calc(msk, i + 1, cur);
 }
 
 void read() {
